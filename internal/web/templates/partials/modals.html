@@ -6,7 +6,7 @@
                 <h3>系统设置</h3>
                 <p class="settings-modal-subtitle">分类管理播放体验、下载同步与平台 Cookie</p>
             </div>
-            <div class="modal-close" onclick="document.getElementById('cookieModal').style.display='none'"><i class="fa-solid fa-xmark"></i></div>
+            <div class="modal-close" onclick="closeSystemConfig()"><i class="fa-solid fa-xmark"></i></div>
         </div>
         <div class="modal-body settings-modal-body">
             <div class="settings-tabs" role="tablist" aria-label="设置分类">
@@ -223,6 +223,11 @@
                         <span class="setting-toggle-text">下载时内嵌元数据（封面、歌词）</span>
                     </label>
                     <p class="setting-hint">影响“保存到本地目录”和“浏览器下载”两种方式；播放始终使用流式下载，不内嵌元数据。</p>
+                </div>
+                <div class="cookie-item">
+                    <label>默认音质</label>
+                    <div id="setting-audio-quality-sources" class="audio-quality-source-list" aria-describedby="setting-default-audio-quality-hint"></div>
+                    <p id="setting-default-audio-quality-hint" class="setting-hint" style="margin-left: 0;">全部音质档位始终显示；灰色档位表示当前 Cookie 不可用。单曲缺少所选档位时会自动向下回退到可播放档位。</p>
                 </div>
                 <div class="cookie-item setting-item">
                     <label class="setting-toggle" for="setting-download-lyrics-to-local">
